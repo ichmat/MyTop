@@ -1,0 +1,123 @@
+/*
+blue : #0A88FC
+light_blue : #56ACFD
+dark_blue : #05437D
+other_blue : #086CC9
+other_dark_blue : #2A557D
+*/
+
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    font-size:12px;
+    height:100vh;
+    margin:0px;
+    padding:0px;
+    /* Padding to avoid the "unsafe" areas behind notches in the screen */
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+    width:100%;
+}
+
+.top-nav{
+    position: fixed;
+    top: 0px;
+    background-color: #05437D;
+    width: 100%;
+    padding: 10px;
+    text-transform:uppercase;
+    box-shadow: 0px 5px 10px #05437d3a;
+}
+
+.top-nav h1{
+    color : aliceblue;
+    margin: 0px;
+}
+
+.button-add{
+    border-radius: 100%;
+    width: 50px;
+    background-color: #086CC9;
+    height: 50px;
+    position: fixed;
+    bottom:2vh;
+    right: 2vh;
+    font-size: 31px;
+    color: #eee;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* LIST CONTAINER */
+
+.toplist{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-around;
+}
+
+.toplistitem{
+    padding-top: 15px;
+    margin-top: 50px ;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 400px;
+    height: 300px;
+    background-color: #56ACFD;
+    border-radius: 5px;
+    display: block;
+    box-shadow: 0px 5px 10px #555;
+}
+
+@media (max-width: 800px) {
+    .toplist {
+      flex-direction: column;
+    }
+    .toplistitem{
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+.tliImg{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #2A557D;
+    margin: auto;
+}
+
+.tliTitre{
+    font-size: 30px;
+    width: 50%;
+    text-align: center;
+    height: 30px;
+    margin: auto;
+    margin-top: 0px;
+    color: #EEE;
+    text-transform:uppercase;
+}
+
+.tliDesc{
+    margin-left: auto;
+    margin-right: auto;
+    height: 110px;
+    width: 90%;
+    color: rgba(238, 238, 238, 0.747);
+}
+
+.tliBottom{
+    color: rgba(207, 207, 207, 0.733);
+    bottom: 10px;
+    width: 90%;
+    margin: auto;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+}

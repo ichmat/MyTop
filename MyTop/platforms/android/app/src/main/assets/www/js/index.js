@@ -25,5 +25,34 @@ function onDeviceReady() {
     // Cordova is now initialized. Have fun!
 
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    document.getElementById('deviceready').classList.add('ready');
+
+    
+}
+
+function createTopListItem(key, title, desc, date, author, img){
+    var html = '<div class="toplistitem" onclick="openTopList(\''+key+'\')">'+
+    '<div class="tliImg">'+ 
+    '<img src="'+img+'" />' +        
+    '</div>'+
+    '<div class="tliTitre">'+
+        '<p>'+title+'</p>'+
+    '</div>'+
+    '<div class="tliDesc">'+
+        '<p>'+desc+'</p>'+
+    '</div>'+
+    '<div class="tliBottom">'+
+        '<p>'+date+'</p>'+
+        '<p>'+author+'</p>'+
+   '</div>';
+    document.getElementById('divtoplist').innerHTML += html;
+}
+
+function openTopList(key){
+    document.getElementById('divtoplist').style.display = 'none';
+    document.getElementById('divelementlist').style.display = 'flex';
+}
+
+function goToMenu(){
+    document.getElementById('divtoplist').style.display = 'flex';
+    document.getElementById('divelementlist').style.display = 'none';
 }

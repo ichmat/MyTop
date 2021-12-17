@@ -25,5 +25,71 @@ function onDeviceReady() {
     // Cordova is now initialized. Have fun!
 
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    document.getElementById('deviceready').classList.add('ready');
+
+    
+}
+
+function createElementListItemView(key, title, desc){
+    var html = '<div class="elementlistitem">' +
+    '<div class="elmTitre">' +
+        '<p class="rank">#'+ key+1 +'</p>' +
+        '<p>'+title+'</p>' +
+    '</div>' +
+    '<div class="elmDesc">' +
+        '<p>'+desc+'</p>' +
+    '</div>' +
+    '</div>';
+    document.getElementById('divelementlist').innerHTML += html;
+}
+
+function createTopListItemView(key, title, desc, date, author, img){
+    var html = '<div class="toplistitem" onclick="openTopList(\''+key+'\')">'+
+    '<div class="tliImg">'+ 
+    '<img src="'+img+'" />' +        
+    '</div>'+
+    '<div class="tliTitre">'+
+        '<p>'+title+'</p>'+
+    '</div>'+
+    '<div class="tliDesc">'+
+        '<p>'+desc+'</p>'+
+    '</div>'+
+    '<div class="tliBottom">'+
+        '<p>'+date+'</p>'+
+        '<p>'+author+'</p>'+
+   '</div>';
+    document.getElementById('divtoplist').innerHTML += html;
+}
+
+function clearTopList(){
+    document.getElementById('divtoplist').innerHTML = '';
+}
+
+function clearElementList(){
+    document.getElementById('divelementlist').innerHTML = '';
+}
+
+function openTopList(key){
+    document.getElementById('divtoplist').style.display = 'none';
+    document.getElementById('divelementlist').style.display = 'flex';
+    selectedlistindex = key;
+    resetActualView();
+}
+
+function goToMenu(){
+    document.getElementById('divtoplist').style.display = 'flex';
+    document.getElementById('divelementlist').style.display = 'none';
+    selectedlistindex = -1;
+    resetActualView();
+}
+
+function openform(){
+
+}
+
+function openform_createList(){
+
+}
+
+function openform_createElement(){
+
 }

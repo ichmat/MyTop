@@ -29,23 +29,140 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
+        <link rel="manifest" href="manifest.json" />
+        <script>
+        window.addEventListener("load", () => {
+            if ("cordova" in window) {
+                if ("serviceWorker" in navigator) {
+                    navigator.serviceWorker
+                    .register("sw.js", { scope: "./" })
+                    .then(function (reg) {});
+                }
+            } else {
+                if ("serviceWorker" in navigator) {
+                    navigator.serviceWorker
+                    .register("sw.js", { scope: "./" })
+                    .then(function (reg) {});
+                }
+            /*var OneSignal = window.OneSignal || [];
+            var initConfig = {
+                appId: "0e7468fd-cf9c-4079-8af1-99e3fc4069de",
+                notifyButton: {
+                enable: true,
+                },
+            };
+            OneSignal.push(function () {
+                OneSignal.SERVICE_WORKER_PARAM = { scope: "push/onesignal/" };
+                OneSignal.SERVICE_WORKER_PATH =
+                "push/onesignal/OneSignalSDKWorker.js";
+                OneSignal.SERVICE_WORKER_UPDATER_PATH =
+                "push/onesignal/OneSignalSDKUpdaterWorker.js";
+                OneSignal.init(initConfig);
+            });*/
+            }
+        });
+        </script>
         <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <meta name="color-scheme" content="light dark">
         <link rel="stylesheet" href="css/index.css">
-        <title>Hello World</title>
+        <title>My Top List</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+        <nav class="top-nav">
+            <h1>My TOP List</h1>
+        </nav>
+        <div class="toplist" id="divtoplist">
+            <div class="toplistitem" onclick="openTopList('key')">
+                <div class="tliImg">
+                    <img src="" />
+                </div>
+                <div class="tliTitre">
+                    <p>Top Chiens</p>
+                </div>
+                <div class="tliDesc">
+                    <p>Mes tops des chiens</p>
+                </div>
+                <div class="tliBottom">
+                    <p>17:05 10/12/2021</p>
+                    <p>Mattéo LOPES</p>
+                </div>
             </div>
+
+            <div class="toplistitem" onclick="openTopList('key')">
+                <div class="tliImg">
+                    <img src="" />
+                </div>
+                <div class="tliTitre">
+                    <p>Top Chiens</p>
+                </div>
+                <div class="tliDesc">
+                    <p>Mes tops des chiens</p>
+                </div>
+                <div class="tliBottom">
+                    <p>17:05 10/12/2021</p>
+                    <p>Mattéo LOPES</p>
+                </div>
+            </div>
+            <div class="toplistitem" onclick="openTopList('key')">
+                <div class="tliImg">
+                    <img src="" />
+                </div>
+                <div class="tliTitre">
+                    <p>Top Chiens</p>
+                </div>
+                <div class="tliDesc">
+                    <p>Mes tops des chiens</p>
+                </div>
+                <div class="tliBottom">
+                    <p>17:05 10/12/2021</p>
+                    <p>Mattéo LOPES</p>
+                </div>
+            </div>
+            <div class="toplistitem" onclick="openTopList('key')">
+                <div class="tliImg">
+                    <img src="" />
+                </div>
+                <div class="tliTitre">
+                    <p>Top Chiens</p>
+                </div>
+                <div class="tliDesc">
+                    <p>Mes tops des chiens</p>
+                </div>
+                <div class="tliBottom">
+                    <p>17:05 10/12/2021</p>
+                    <p>Mattéo LOPES</p>
+                </div>
+            </div>
+            <div class="toplistitem" onclick="openTopList('key')">
+                <div class="tliImg">
+                    <img src="" />
+                </div>
+                <div class="tliTitre">
+                    <p>Top Chiens</p>
+                </div>
+                <div class="tliDesc">
+                    <p>Mes tops des chiens</p>
+                </div>
+                <div class="tliBottom">
+                    <p>17:05 10/12/2021</p>
+                    <p>Mattéo LOPES</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="elementlist" id="divelementlist">
+
+        </div>
+
+        <div class="button-add">
+            +
         </div>
         <script src="cordova.js"></script>
         <script src="js/index.js"></script>
+        <script src="js/storage.js"></script>
+        <script src="js/pagemanager.js"></script>
     </body>
 </html>

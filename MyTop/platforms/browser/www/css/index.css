@@ -22,6 +22,35 @@ body {
     width:100%;
 }
 
+.offlineDialogBD{
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(95, 95, 95, 0.178);
+    align-items: center;
+    justify-content: center;
+}
+
+.offlineDialog{
+    width: 200px;
+    height: 30px;
+    background-color: white;
+    border: 0px solid black;
+    border-radius: 5px;
+    margin: auto;
+    box-shadow: 0px 5px 10px #05437d3a;
+}
+
+.offlineDialog p{
+    color: black;
+    font-size: 15px;
+    margin: auto;
+    text-align: center;
+}
+
 .top-nav{
     position: fixed;
     top: 0px;

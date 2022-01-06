@@ -25,7 +25,16 @@ function onDeviceReady() {
     // Cordova is now initialized. Have fun!
 
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    
+    document.addEventListener("offline", onOffline, false);
+    document.addEventListener("online", onOnline, false);
+}
+
+function onOffline() {
+    document.getElementsByClassName("offlineDialogBD")[0].style.display = "block";
+}
+
+function onOnline() {
+    document.getElementsByClassName("offlineDialogBD")[0].style.display = "none";
 }
 
 document.getElementsByClassName("button-add")[0].addEventListener("click", addItem);

@@ -9,6 +9,9 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.ynov.myTop"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.ynov.myTop"
     }
   },
   "dependent_plugins": {}

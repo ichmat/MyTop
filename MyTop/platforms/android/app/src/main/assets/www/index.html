@@ -62,7 +62,7 @@
             }
         });
         </script>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
@@ -72,7 +72,7 @@
     </head>
     <body>
         <nav class="top-nav">
-            <h1>My TOP List</h1>
+            <h1 id="titletoplist">My TOP List</h1>
         </nav>
         <div class="toplist" id="divtoplist">
             <div class="toplistitem" onclick="openTopList('key')">
@@ -89,77 +89,63 @@
                     <p>17:05 10/12/2021</p>
                     <p>Mattéo LOPES</p>
                 </div>
-            </div>
-
-            <div class="toplistitem" onclick="openTopList('key')">
-                <div class="tliImg">
-                    <img src="" />
-                </div>
-                <div class="tliTitre">
-                    <p>Top Chiens</p>
-                </div>
-                <div class="tliDesc">
-                    <p>Mes tops des chiens</p>
-                </div>
-                <div class="tliBottom">
-                    <p>17:05 10/12/2021</p>
-                    <p>Mattéo LOPES</p>
-                </div>
-            </div>
-            <div class="toplistitem" onclick="openTopList('key')">
-                <div class="tliImg">
-                    <img src="" />
-                </div>
-                <div class="tliTitre">
-                    <p>Top Chiens</p>
-                </div>
-                <div class="tliDesc">
-                    <p>Mes tops des chiens</p>
-                </div>
-                <div class="tliBottom">
-                    <p>17:05 10/12/2021</p>
-                    <p>Mattéo LOPES</p>
-                </div>
-            </div>
-            <div class="toplistitem" onclick="openTopList('key')">
-                <div class="tliImg">
-                    <img src="" />
-                </div>
-                <div class="tliTitre">
-                    <p>Top Chiens</p>
-                </div>
-                <div class="tliDesc">
-                    <p>Mes tops des chiens</p>
-                </div>
-                <div class="tliBottom">
-                    <p>17:05 10/12/2021</p>
-                    <p>Mattéo LOPES</p>
-                </div>
-            </div>
-            <div class="toplistitem" onclick="openTopList('key')">
-                <div class="tliImg">
-                    <img src="" />
-                </div>
-                <div class="tliTitre">
-                    <p>Top Chiens</p>
-                </div>
-                <div class="tliDesc">
-                    <p>Mes tops des chiens</p>
-                </div>
-                <div class="tliBottom">
-                    <p>17:05 10/12/2021</p>
-                    <p>Mattéo LOPES</p>
+                <div class="tliButtons">
+                    <input type="button" value="✎" onclick="openform('key')"/>
+                    <input type="button" value="🗑" onclick="deleteItem('key')" />
                 </div>
             </div>
         </div>
 
         <div class="elementlist" id="divelementlist">
+            <div class="elementlistitem">
+                <div class="elmTitre">
+                    <p class="rank">#1</p>
+                    <p>Element du top</p>
+                </div>
+                <div class="elmDesc">
+                    <p>Description de l'element</p>
+                </div>
+            </div>
 
+            <div class="elementlistitem">
+                <div class="elmTitre">
+                    <p class="rank">#2</p>
+                    <p>Element du top</p>
+                </div>
+                <div class="elmDesc">
+                    <p>Description de l'element</p>
+                </div>
+            </div>
         </div>
 
-        <div class="button-add">
-            +
+        <div class="offlineDialogBD">
+            <div class="offlineDialog">
+                <p> Vous êtes hors ligne </p>
+            </div>
         </div>
+
+        <div class="button-add" > 
+            <p>+</p>
+        </div>
+
+        <div class="button-go-back" onclick="goToMenu()" > 
+            <p> < </p>
+        </div>
+
+        <div class="createformbg" id="divformcreate">
+            <div class="createform">
+                <h1 id="titleform">Créer une liste</h1>
+                <input id="CF_Title" placeholder="Titre" type="text" value="" />
+                <textarea id="CF_Desc" placeholder="Description"></textarea>
+                <input id="CF_Auth" placeholder="Autheur" type="text" value=""  />
+
+                <div class="divbuttons">
+                    <input class="createButton" type="button" value="Créer" />
+                    <input class="cancelButton" type="button" value="Annuler" />
+                </div>
+            </div>
+        </div>
+
         <script src="cordova.js"></script>
         <script src="js/index.js"></script>
         <script src="js/storage.js"></script>
